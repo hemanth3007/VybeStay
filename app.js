@@ -99,6 +99,10 @@ app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 // Wrong Route Handler
 app.use((req, res, next) => {
   next(new expressError(404, "Page Not Found!"));
@@ -113,4 +117,3 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
   console.log("Server is listening at the port 8080");
 });
-
