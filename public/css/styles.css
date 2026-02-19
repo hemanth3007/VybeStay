@@ -223,16 +223,13 @@ body {
   opacity: 1;
   color: #fe424d;
   font-weight: 600;
+  border-bottom: 1px solid #fe424d;
+  margin-bottom: 2px;
+  padding-bottom: 2px;
 }
 
 .active-filter .filer-icon {
   color: #fe424d;
-}
-
-.active-filter {
-  border-bottom: 1px solid #fe424d;
-  margin-bottom: 2px;
-  padding-bottom: 2px;
 }
 
 .clear-filters-btn {
@@ -336,3 +333,4 @@ body {
     text-align: left;
   }
 }
+
