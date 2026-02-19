@@ -219,6 +219,10 @@ body {
   color: inherit;
 }
 
+.filter-link:focus {
+  color: #000 !important;
+}
+
 .clear-filters-btn {
   background-color: #fe424d !important;
   color: #fff !important;
