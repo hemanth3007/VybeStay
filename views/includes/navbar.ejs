@@ -1,51 +1,69 @@
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top py-2">
-  <div class="container">
-    <a class="navbar-brand" href="/listings"
-      ><i class="fa-regular fa-compass"></i
-    ></a>
+<nav
+  class="navbar navbar-expand-md bg-body-light border-bottom sticky-top py-2"
+>
+  <div class="container d-flex align-items-center">
+    <!-- Logo -->
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-regular fa-compass"></i>
+    </a>
+
+    <!-- Toggler -->
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Collapse -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+      <!-- LEFT LINKS -->
+      <div class="navbar-nav align-items-center">
         <a class="nav-link" href="/listings">Explore</a>
         <a class="nav-link" href="/listings/new">Add New Stay</a>
       </div>
 
-      <div class="navbar-nav search ms-auto"></div>
-      <form class="d-flex" role="search" action="/listings" method="GET">
-        <input
-          class="form-control me-2 search-ip"
-          type="search"
-          name="search"
-          value="<%= typeof search !== 'undefined' ? search : '' %>"
-          placeholder="Search by location"
-        />
+      <!-- CENTER SEARCH -->
+      <div class="mx-auto desktop-search">
+        <form
+          class="d-flex navbar-search-form"
+          role="search"
+          action="/listings"
+          method="GET"
+        >
+          <input
+            class="form-control search-ip"
+            type="search"
+            name="search"
+            value="<%= typeof search !== 'undefined' ? search : '' %>"
+            placeholder="Search by location"
+          />
 
-        <% if (typeof selectedCategory !== "undefined" && selectedCategory) { %>
-        <input type="hidden" name="category" value="<%= selectedCategory %>" />
-        <% } %>
+          <% if (typeof selectedCategory !== "undefined" && selectedCategory) {
+          %>
+          <input
+            type="hidden"
+            name="category"
+            value="<%= selectedCategory %>"
+          />
+          <% } %>
 
-        <button class="btn search-btn" type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>Search
-        </button>
-      </form>
+          <button class="btn search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
+      </div>
 
-      <div class="navbar-nav ms-auto">
-        <% if(!currUser || typeof currUser === "undefined") {%>
+      <!-- RIGHT AUTH -->
+      <div class="navbar-nav">
+        <% if(!currUser) { %>
         <a class="nav-link" href="/signup"><b>Sign Up</b></a>
         <a class="nav-link" href="/login"><b>Login</b></a>
-        <%}%> <% if(currUser || typeof currUser !== "undefined") {%>
+        <% } else { %>
         <a class="nav-link" href="/logout"><b>Logout</b></a>
-        <%}%>
+        <% } %>
       </div>
     </div>
   </div>

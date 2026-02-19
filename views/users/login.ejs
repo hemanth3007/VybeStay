@@ -1,8 +1,13 @@
 <% layout("/layouts/boilerplate") %>
-<body>
-  <div class="row mt-3">
-    <p class="col-4 offset-4 signupHeading">Login</p>
-    <div class="col-4 offset-4 signup-form">
+
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="min-height: calc(100vh - 12rem)"
+>
+  <div class="w-100" style="max-width: 420px">
+    <p class="signupHeading text-center">LogIn</p>
+
+    <div class="signup-form">
       <form action="/login" method="POST" class="needs-validation" novalidate>
         <div class="mb-3">
           <label for="username" class="form-label">Username: </label>
@@ -28,13 +33,16 @@
             placeholder="Enter your password"
             required
           />
-          <div class="invalid-feedback">Enter the passsword!</div>
+          <div class="invalid-feedback">Enter the password!</div>
         </div>
-        <button class="btn btn-dark signup-btn mb-1" style="margin-left: 10rem;">Login</button>
-        <p style="text-align: center" class="existsAcc newAcc">
-          Don't have an account? <b><a href="/signup">Create an Account</a></b>
+
+        <button class="btn signup-btn w-100 mb-2">LogIn</button>
+
+        <p class="existsAcc text-center">
+          Don't have an account?
+          <b><a href="/signup">SignUp</a></b>
         </p>
       </form>
     </div>
   </div>
-</body>
+</div>
