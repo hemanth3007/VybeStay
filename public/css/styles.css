@@ -219,8 +219,20 @@ body {
   color: inherit;
 }
 
-.filter-link:focus {
-  color: #000 !important;
+.active-filter .filter {
+  opacity: 1;
+  color: #fe424d;
+  font-weight: 600;
+}
+
+.active-filter .filer-icon {
+  color: #fe424d;
+}
+
+.active-filter {
+  border-bottom: 1px solid #fe424d;
+  margin-bottom: 2px;
+  padding-bottom: 2px;
 }
 
 .clear-filters-btn {

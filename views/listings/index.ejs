@@ -3,7 +3,7 @@
   <div class="filters">
     <a
       href="/listings?category=Trending<%= search?'&search='+search:'' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Trending' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon"><i class="fa-solid fa-fire"></i></div>
@@ -13,7 +13,7 @@
 
     <a
       href="/listings?category=Rooms<%= search ? '&search=' + search : '' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Rooms' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon"><i class="fa-solid fa-bed"></i></div>
@@ -23,7 +23,7 @@
 
     <a
       href="/listings?category=Villas<%= search ? '&search=' + search : '' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Villas' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon"><i class="fa-solid fa-house-chimney"></i></div>
@@ -33,7 +33,7 @@
 
     <a
       href="/listings?category=Iconic Cities<%= search ? '&search=' + search : '' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Iconic Cities' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon"><i class="fa-solid fa-mountain-city"></i></div>
@@ -43,7 +43,7 @@
 
     <a
       href="/listings?category=Mountains<%= search ? '&search=' + search : '' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Mountains' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon"><i class="fa-solid fa-mountain"></i></div>
@@ -53,7 +53,7 @@
 
     <a
       href="/listings?category=Castles<%= search ? '&search=' + search : '' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Castles' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon"><i class="fa-brands fa-fort-awesome"></i></div>
@@ -63,7 +63,7 @@
 
     <a
       href="/listings?category=Amazing Pools<%= search ? '&search=' + search : '' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Amazing Pools' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon">
@@ -75,7 +75,7 @@
 
     <a
       href="/listings?category=Camping<%= search ? '&search=' + search : '' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Camping' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon"><i class="fa-solid fa-tents"></i></div>
@@ -85,7 +85,7 @@
 
     <a
       href="/listings?category=Farms<%= search ? '&search=' + search : '' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Farms' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon"><i class="fa-solid fa-cow"></i></div>
@@ -95,7 +95,7 @@
 
     <a
       href="/listings?category=Artic<%= search ? '&search=' + search : '' %>"
-      class="filter-link"
+      class="filter-link <%= selectedCategory === 'Artic' ? 'active-filter' : '' %>"
     >
       <div class="filter">
         <div class="filter-icon"><i class="fa-solid fa-snowflake"></i></div>
