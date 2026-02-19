@@ -229,12 +229,6 @@ body {
   color: #fe424d;
 }
 
-.active-filter {
-  border-bottom: 1px solid #fe424d;
-  margin-bottom: 2px;
-  padding-bottom: 2px;
-}
-
 .clear-filters-btn {
   background-color: #fe424d !important;
   color: #fff !important;
