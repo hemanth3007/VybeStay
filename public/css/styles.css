@@ -116,6 +116,11 @@ body {
   font-weight: 600 !important;
 }
 
+.signup-btn {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+
 .new-btn:hover,
 .edit-page-btn:hover,
 .del-btn:hover,
@@ -254,6 +259,7 @@ body {
 .search-ip {
   padding: 0.5rem 2rem 0.5rem 2rem !important;
   border-radius: 24px !important;
+  margin-right: 1rem;
 }
 
 .search-btn i {
@@ -289,5 +295,27 @@ body {
 
 .form-check-input:checked:focus {
   box-shadow: #fe424d !important;
+}
 
+.profile-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: #000;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: 0.3s ease;
+  color: #fff;
+  font-weight: 700;
+}
+
+.profile-icon:hover {
+  background-color: #fe424d;
+}
+
+#profileDropdown::after {
+  display: none !important;
 }

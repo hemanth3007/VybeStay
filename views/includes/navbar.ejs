@@ -62,7 +62,30 @@
         <a class="nav-link" href="/signup"><b>Sign Up</b></a>
         <a class="nav-link" href="/login"><b>Login</b></a>
         <% } else { %>
-        <a class="nav-link" href="/logout"><b>Logout</b></a>
+        <div class="dropdown">
+          <a
+            class="nav-link dropdown-toggle d-flex align-items-center"
+            id="profileDropdown"
+            data-bs-toggle="dropdown"
+          >
+            <div class="profile-icon">
+              <%= currUser.username.charAt(0).toUpperCase() %>
+            </div>
+          </a>
+
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="profileDropdown"
+          >
+            <li class="dropdown-item-text">
+              <strong>@<%= currUser.username %></strong>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
         <% } %>
       </div>
     </div>
