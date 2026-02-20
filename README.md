@@ -7,78 +7,69 @@ VybeStay is a full-stack MERN web application inspired by modern stay-booking pl
 Users can explore stays, create listings, upload images via cloud storage, and leave reviews.
 
 🔗 Live Demo: https://vybestay.onrender.com
-(Not fully responsive. Works best on laptops and PCs)
+---
+
+## 🚀 Live Features
+
+- User Authentication (Session-based using Passport.js)
+- Create, Edit, Delete Listings
+- Image Upload for Listings
+- Search by Location or Country
+- Category-Based Filtering
+- Review System with Ratings
+- Interactive Map Integration (Mapbox)
+- Fully Responsive Mobile-First UI
+- Flash Messaging System
+
 ---
 
 ## 🛠 Tech Stack
 
-### 💻 Frontend
-- EJS (Embedded JavaScript Templates)
-- Bootstrap 5
-- Custom CSS
-- Font Awesome
-
-### 🖥 Backend
+### Backend
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
-
-### 🔐 Authentication & Authorization
 - Passport.js (Local Strategy)
-- Express Sessions
-- Flash Messages
-- Role-based ownership protection
+- Express-session
+- Connect-flash
 
-### ☁ Cloud & Deployment
-- Cloudinary (Cloud Image Storage)
-- MongoDB Atlas (Cloud Database)
-- Render (Backend Hosting)
-
----
-
-## ✨ Core Features
-
-- 🏠 Create, Edit & Delete Listings
-- ☁ Upload & Store Images using Cloudinary
-- 🔍 Search Listings by Location
-- 🏷 Category-based Filtering (Trending, Villas, Rooms, Mountains, etc.)
-- ⭐ Add & Delete Reviews
-- 👤 User Signup/Login/Logout
-- 🔐 Authorization (Only owners can edit/delete)
-- 💰 Tax Toggle (Display total price including GST)
-- ⚡ RESTful Routing Architecture
----
-
-## 🛡 Security & Validations
-
-- Server-side validation using Joi
-- Authentication middleware protection
-- Authorization checks before editing/deleting listings
-- Centralized error handling
+### Frontend
+- EJS Templating
+- Bootstrap 5
+- Custom CSS
+- FontAwesome
+- Mapbox GL JS
 
 ---
 
-## 🚀 Learning Highlights
+## 🏗 Architecture
 
-This project demonstrates:
+The project follows MVC (Model-View-Controller) architecture:
 
-- Relational data modeling with MongoDB (Listings ↔ Users ↔ Reviews)
-- Middleware-based authentication flow
-- Cloud-based image storage integration
-- RESTful API design
-- Full CRUD functionality
-
----
-
-## 🧑‍💻 Author
-
-Hemanth K  
-Full Stack Developer | MERN Stack Enthusiast  
+- Models → Database schemas
+- Views → EJS templates
+- Controllers → Business logic
+- Routes → RESTful routing
+- Middleware → Authentication & Authorization
 
 ---
 
-## 📜 License
+## 📱 Responsive Design
 
-This project is built for learning and portfolio purposes.
+- Bootstrap 12-column grid system
+- row-cols responsive utilities
+- Mobile-first design
+- Flexbox-based filter system
+- Breakpoint-based layout optimization
+
+---
+
+## ⚙️ Setup Instructions
+
+```bash
+git clone https://github.com/hemanth3007/VybeStay.git
+cd VybeStay
+npm install
+node/nodemon app.js
 
