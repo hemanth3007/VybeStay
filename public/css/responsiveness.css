@@ -1,43 +1,55 @@
 /* Responsive navbar */
-
 @media (max-width: 768px) {
   .desktop-search {
-    width: 100%;
-  }
-
-  .navbar-nav:last-child {
-    align-items: center;
     width: 100%;
   }
 
   .navbar-collapse {
     background: #fff;
     padding: 1rem;
-    border-radius: 12px;
-    margin-top: 10px;
+    border-radius: 1rem;
   }
 
   .navbar-search-form {
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    gap: 0.7rem;
+    width: 50%;
     margin: 1rem 0;
   }
 
   .navbar-search-form .search-ip {
     width: 100% !important;
+    font-size: 0.8rem !important;
   }
 
   .navbar-search-form .search-btn {
     width: 100%;
     display: flex;
     justify-content: center;
+    font-size: 0.8rem !important;
+    padding: 0.5rem !important;
+  }
+
+  .navbar-nav.align-items-center {
+    align-items: flex-start !important;
+  }
+
+  /* Keep profile aligned properly */
+  .navbar-nav:last-child {
+    align-items: flex-start !important;
+    margin-top: 0.5rem;
+  }
+
+  .dropdown-menu {
+    position: static !important;
+    width: 50%;
+    margin-top: 0.5rem;
   }
 }
 
 /* Filter responsive fix */
 
-/* DESKTOP (restore normal layout)  */
+/* DESKTOP */
 @media (min-width: 769px) {
   .filters {
     display: flex;
@@ -189,4 +201,3 @@
     font-size: 0.9rem;
   }
 }
-
