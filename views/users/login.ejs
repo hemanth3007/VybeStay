@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate") %>
+
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="min-height: calc(100vh - 12rem)"
+>
+  <div class="w-100" style="max-width: 420px">
+    <p class="signupHeading text-center">LogIn</p>
+
+    <div class="signup-form">
+      <form action="/login" method="POST" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username: </label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            class="form-control"
+            placeholder="Enter a username"
+            required
+          />
+          <div class="valid-feedback">Look's Good</div>
+          <div class="invalid-feedback">Username should be valid</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password: </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter your password"
+            required
+          />
+          <div class="invalid-feedback">Enter the password!</div>
+        </div>
+
+        <button class="btn signup-btn w-100 mb-2">LogIn</button>
+
+        <p class="existsAcc text-center">
+          Don't have an account?
+          <b><a href="/signup">SignUp</a></b>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

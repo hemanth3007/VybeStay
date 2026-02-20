@@ -1,0 +1,115 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+  <div class="container mt-5 pt-3">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <h1 class="mb-4">Edit Listing</h1>
+
+        <form
+          action="/listings/<%= listing._id %>?_method=PUT"
+          method="POST"
+          class="needs-validation"
+          novalidate
+          enctype="multipart/form-data"
+        >
+          <div class="mb-4">
+            <label for="title" class="form-label">Title: </label>
+            <input
+              type="text"
+              name="listing[title]"
+              class="form-control"
+              value="<%= listing.title %>"
+              required
+            />
+            <div class="invalid-feedback">Enter valid Title</div>
+          </div>
+
+          <div class="mb-4">
+            <label for="description" class="form-label">Description: </label>
+            <textarea name="listing[description]" class="form-control" required>
+<%= listing.description %></textarea
+            >
+            <div class="invalid-feedback">Enter valid Description</div>
+          </div>
+
+          <div class="mb-4">
+            <h6><i>Original Listing Image</i></h6>
+            <img
+              src="<%= originalImageUrl %>"
+              class="card-img-top show-img"
+              alt="listing_image"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="image" class="form-label">Upload New Image: </label>
+            <input type="file" name="listing[image]" class="form-control" />
+          </div>
+
+          <div class="row">
+            <div class="mb-4 col-12 col-md-4">
+              <label for="price" class="form-label">Price: </label>
+              <input
+                type="number"
+                name="listing[price]"
+                class="form-control"
+                value="<%= listing.price %>"
+                required
+              />
+              <div class="invalid-feedback">Price should be valid!!</div>
+            </div>
+
+            <div class="mb-4 col-12 col-md-8">
+              <label for="country" class="form-label">Country: </label>
+              <input
+                type="text"
+                name="listing[country]"
+                class="form-control"
+                value="<%= listing.country %>"
+                required
+              />
+              <div class="invalid-feedback">Country should be valid</div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label for="location" class="form-label">Location: </label>
+            <input
+              type="text"
+              name="listing[location]"
+              class="form-control"
+              value="<%= listing.location %>"
+              required
+            />
+            <div class="invalid-feedback">Location should be valid</div>
+          </div>
+
+          <div class="mb-4">
+            <label for="category" class="form-label">Category:</label>
+            <select class="form-select" name="listing[category]" required>
+              <option selected><%= listing.category %></option>
+              <option value="Trending">Trending</option>
+              <option value="Rooms">Rooms</option>
+              <option value="Villas">Villas</option>
+              <option value="Iconic Cities">Iconic Cities</option>
+              <option value="Mountains">Mountains</option>
+              <option value="Castles">Castles</option>
+              <option value="Amazing Pools">Amazing Pools</option>
+              <option value="Camping">Camping</option>
+              <option value="Farms">Farms</option>
+              <option value="Artic">Artic</option>
+            </select>
+          </div>
+
+          <button
+            class="edit-page-btn btn btn-dark"
+            style="margin-bottom: 10px; width: 100%"
+          >
+            Edit Listing
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,117 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <h1 class="mb-4">Add New Listing</h1>
+
+        <form
+          action="/listings"
+          method="POST"
+          class="needs-validation"
+          novalidate
+          enctype="multipart/form-data"
+        >
+          <div class="mb-4">
+            <label for="title" class="form-label">Title: </label>
+            <input
+              type="text"
+              name="listing[title]"
+              class="form-control"
+              placeholder="Enter a catchy Title"
+              required
+            />
+            <div class="invalid-feedback">Title should be valid</div>
+          </div>
+
+          <div class="mb-4">
+            <label for="description" class="form-label">Description: </label>
+            <textarea
+              name="listing[description]"
+              class="form-control"
+              placeholder="Enter the Description"
+              required
+            ></textarea>
+            <div class="invalid-feedback">Description should be valid</div>
+          </div>
+
+          <input
+            type="hidden"
+            name="listing[image][filename]"
+            value="listingimage"
+          />
+
+          <div class="mb-4">
+            <label for="image" class="form-label">Upload Listing Image: </label>
+            <input type="file" name="listing[image]" class="form-control" />
+          </div>
+
+          <div class="row">
+            <div class="mb-4 col-12 col-md-4">
+              <label for="price" class="form-label">Price: </label>
+              <input
+                type="number"
+                name="listing[price]"
+                class="form-control"
+                placeholder="Enter the Price"
+                required
+              />
+              <div class="invalid-feedback">Price should be valid</div>
+            </div>
+
+            <div class="mb-4 col-12 col-md-8">
+              <label for="country" class="form-label">Country: </label>
+              <input
+                type="text"
+                name="listing[country]"
+                class="form-control"
+                placeholder="Enter the Country"
+                required
+              />
+              <div class="invalid-feedback">Country should be valid</div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label for="location" class="form-label">Location: </label>
+            <input
+              type="text"
+              name="listing[location]"
+              class="form-control"
+              placeholder="Enter the Location"
+              required
+            />
+            <div class="invalid-feedback">Location should be valid</div>
+          </div>
+
+          <div class="mb-4">
+            <label for="category" class="form-label">Category:</label>
+            <select class="form-select" name="listing[category]" required>
+              <option selected disabled value="">
+                Click here to select a category.
+              </option>
+              <option value="Trending">Trending</option>
+              <option value="Rooms">Rooms</option>
+              <option value="Villas">Villas</option>
+              <option value="Iconic Cities">Iconic Cities</option>
+              <option value="Mountains">Mountains</option>
+              <option value="Castles">Castles</option>
+              <option value="Amazing Pools">Amazing Pools</option>
+              <option value="Camping">Camping</option>
+              <option value="Farms">Farms</option>
+              <option value="Artic">Artic</option>
+            </select>
+          </div>
+
+          <button
+            class="btn new-btn btn-dark"
+            style="margin-bottom: 10px; width: 100%"
+          >
+            Add
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

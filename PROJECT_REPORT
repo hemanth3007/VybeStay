@@ -1,0 +1,233 @@
+# VybeStay – Technical Project Report
+
+Author: Hemanth K
+Project Type: Full Stack Web Application  
+Architecture: MVC (Model–View–Controller)  
+Authentication: Session-Based (Passport.js Local Strategy)
+
+---
+
+# 1. Project Overview
+
+VybeStay is a full-stack property listing platform inspired by modern accommodation marketplaces.  
+The application allows users to register, authenticate, create listings, review properties, search and filter results, and view location data using an interactive map.
+
+The primary objective of this project was to design and implement a secure, scalable, and responsive web application using industry-standard practices.
+
+---
+
+# 2. Technology Stack
+
+## Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose ODM
+- Passport.js (Local Strategy)
+- Express-session
+- Connect-flash
+
+## Frontend
+- EJS (Embedded JavaScript Templates)
+- Bootstrap 5
+- Custom CSS
+- FontAwesome Icons
+- Mapbox GL JS
+
+---
+
+# 3. System Architecture
+
+The application follows the MVC (Model–View–Controller) pattern.
+
+## MVC Breakdown
+
+Models:
+- User
+- Listing
+- Review
+
+Views:
+- EJS templates
+- Layout-based rendering
+- Reusable partials (Navbar, Flash messages)
+
+Controllers:
+- Handle business logic
+- Manage CRUD operations
+- Process authentication
+- Implement filtering and search
+
+Routes:
+- RESTful route structure
+- Separate route files for listings, reviews, and authentication
+
+Middleware:
+- Authentication verification
+- Authorization checks
+- Error handling
+
+---
+
+# 4. Authentication System
+
+Authentication is implemented using Passport.js Local Strategy.
+
+## Authentication Flow
+
+1. User submits login form.
+2. Passport middleware validates credentials.
+3. Password comparison performed using hashed password.
+4. On successful login:
+   - User ID is serialized into session.
+5. Session ID stored in cookie.
+6. On subsequent requests:
+   - Session cookie is sent to server.
+   - User is deserialized from database.
+
+## Security Features
+
+- Password hashing (never stored in plain text)
+- Session-based authentication
+- Environment variable storage for secrets
+- Authorization middleware for protected routes
+
+---
+
+# 5. Database Design
+
+MongoDB is used as the primary database.
+
+## User Schema
+- username
+- email
+- hashed password
+
+## Listing Schema
+- title
+- description
+- image
+- price
+- location
+- country
+- category
+- owner (ObjectId reference to User)
+
+## Review Schema
+- rating
+- comment
+- author (ObjectId reference)
+- linked listing reference
+
+Relationships are managed using Mongoose population.
+
+---
+
+# 6. Search Implementation
+
+Search functionality uses MongoDB regular expressions.
+
+## Query Example
+
+```javascript
+$or: [
+  { location: { $regex: searchQuery, $options: "i" } },
+  { country: { $regex: searchQuery, $options: "i" } }
+]
+
+## Features
+- Case-insensitive search
+- Partial matching
+- Multi-field filtering
+
+## Limitations
+- Not indexed
+-Performance may degrade with large datasets
+
+## Future improvement:
+-Implement MongoDB text indexing for optimized search.
+
+---
+
+# 7. Filtering System
+- Listings can be filtered by category using query parameters.
+- Filter state preserved across searches.
+- UI dynamically highlights active category.
+- Horizontal scroll implemented for mobile usability.
+- Flexbox and Bootstrap grid utilities were used to ensure responsive behavior.
+
+---
+
+# 8. Map Integration
+- Map functionality is implemented using MapTiler.
+
+I## mplementation Details
+- Map token stored in environment variable.
+- Coordinates passed from backend to frontend via EJS.
+- Dynamic marker rendering based on listing data.
+- Fully responsive map container.
+
+## Security consideration:
+- Map token not hardcoded.
+
+---
+
+9. Responsive Design Strategy
+- The application follows a mobile-first responsive design.
+
+## Tools Used
+- Bootstrap 12-column grid system
+- row-cols utilities
+- Flexbox layout control
+- Media queries for small-device optimization
+
+## Breakpoints Considered
+- <576px → Mobile
+- ≥768px → Tablet
+- ≥992px → Laptop
+- ≥1200px → Desktop
+
+## Issues Resolved
+- Fixed vh-based width breaking layout
+- Grid offset causing mobile misalignment
+- Filter wrapping on small screens
+- Toggle overflow on narrow Android devices
+- Flash message alignment issues
+- All layout problems were resolved using responsive grid adjustments and flexbox behavior control.
+
+---
+
+10. Flash Messaging System
+- Flash messages are implemented using connect-flash.
+- Success and error messages rendered conditionally.
+- Bootstrap alerts used for UI display.
+- Fully responsive container implementation.
+
+---
+
+11. Challenges Faced
+- Layout breaking due to fixed vh widths.
+- Offset-based Bootstrap grid misuse on mobile.
+- Flex wrapping behavior causing UI distortion.
+- Maintaining consistent spacing across breakpoints.
+- Debugging session persistence and authentication flow.
+- Each issue was resolved through iterative debugging using browser developer tools and responsive testing on real devices.
+
+---
+
+12. Future Improvements
+- Pagination for listing results.
+- MongoDB text indexing for search optimization.
+- Role-based access control.
+- JWT-based API mode.
+- Image storage using Cloudinary.
+- Automated testing (Unit & Integration).
+- Rate limiting for security hardening.
+
+---
+
+13. Conclusion
+VybeStay demonstrates full-stack development capability using modern web technologies.
+The project integrates authentication, database relationships, responsive UI design, and third-party API integration.
+
+The system is scalable, modular, and follows industry-standard architectural practices.
